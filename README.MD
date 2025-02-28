@@ -1,77 +1,76 @@
-# 🎤 YouTube Audio Transcriber  
+# 🎤 YouTube Audio Transcriber
 
-Este script permite descargar el audio de un video de **YouTube** y transcribirlo usando **OpenAI Whisper**.  
+This script allows you to download the audio from a **YouTube** video and transcribe it using **OpenAI Whisper**.
 
-## 🚀 Características  
-👉 Descarga automáticamente el audio de un video de YouTube.  
-👉 Convierte el audio a formato WAV.  
-👉 Usa **Whisper** para transcribir el contenido del audio.  
-👉 Guarda la transcripción en un archivo de texto.  
-👉 Soporta ejecución con **argumentos** o **modo interactivo**.  
+## 🚀 Features
+👉 Automatically downloads the audio from a YouTube video.
+👉 Converts the audio to WAV format.
+👉 Uses **Whisper** to transcribe the audio content.
+👉 Saves the transcription in a text file.
+👉 Supports execution with **arguments** or **interactive mode**.
 
-## 🛠️ Instalación y Configuración  
+## 🛠️ Installation and Setup
 
-### **1️⃣ Clonar el repositorio**  
-```bash  
-git clone https://github.com/TU_USUARIO/youtube_transcriber.git  
-cd youtube_transcriber  
-```  
-
-### **2️⃣ Instalar dependencias**  
-Asegúrate de tener **Python 3.8+** instalado y ejecuta:  
-```bash  
-pip install -r requirements.txt  
-```  
-
-### **3️⃣ Instalar FFmpeg (si no lo tienes)**  
-- **Windows:** Descarga desde [FFmpeg.org](https://ffmpeg.org/download.html) y agrégalo a `PATH`.  
-- **Linux:**  
-  ```bash  
-  sudo apt update && sudo apt install ffmpeg  
-  ```  
-- **MacOS:**  
-  ```bash  
-  brew install ffmpeg  
-  ```  
-
-## 🎯 Uso del Script  
-
-### **1️⃣ Modo interactivo (sin argumentos)**  
-Ejecuta el script y pega la URL del video cuando se solicite:  
-```bash  
-python transcriber.py  
-```  
-
-### **2️⃣ Modo automático (con URL como argumento)**  
-Pasa la URL del video directamente al ejecutar el script:  
-```bash  
-python transcriber.py "https://www.youtube.com/watch?v=VIDEO_ID"  
-```  
-
-### **3️⃣ Ubicación del archivo de salida**  
-El texto transcrito se guardará en:  
+### **1️⃣ Clone the repository**
+```bash
+git clone https://github.com/TU_USUARIO/youtube_transcriber.git
+cd youtube_transcriber
 ```
-output/transcription.txt  
-```  
 
-## ⚙️ Opcional: Actualizar dependencias  
-Si en el futuro necesitas actualizar las dependencias, usa:  
-```bash  
-pip freeze > requirements.txt  
-```  
+### **2️⃣ Install dependencies**
+Make sure you have **Python 3.8+** installed and run:
+```bash
+pip install -r requirements.txt
+```
 
-## 🛠️ Contribución y Desarrollo  
-1. **Haz un fork** del repositorio.  
-2. Crea una nueva rama:  
-   ```bash  
-   git checkout -b mi-nueva-rama  
-   ```  
-3. Realiza cambios y confirma:  
-   ```bash  
-   git commit -m "Agregada nueva funcionalidad"  
-   ```  
-4. Sube los cambios y crea un **Pull Request**.  
+### **3️⃣ Install FFmpeg (if not installed)**
+- **Windows:** Download from [FFmpeg.org](https://ffmpeg.org/download.html) and add it to `PATH`.
+- **Linux:**
+  ```bash
+  sudo apt update && sudo apt install ffmpeg
+  ```
+- **MacOS:**
+  ```bash
+  brew install ffmpeg
+  ```
 
-## 📚 Licencia  
-Este proyecto se distribuye bajo la **Licencia MIT**.
+## 🎯 Script Usage
 
+### **1️⃣ Interactive mode (without arguments)**
+Run the script and enter the video URL when prompted:
+```bash
+python transcriber.py
+```
+
+### **2️⃣ Automatic mode (with URL as an argument)**
+Pass the video URL directly when running the script:
+```bash
+python transcriber.py "https://www.youtube.com/watch?v=VIDEO_ID"
+```
+
+### **3️⃣ Transcription output location**
+The transcribed text will be saved in:
+```
+textos/VIDEO_TITLE.txt
+```
+
+## ⚙️ Optional: Update dependencies
+If you need to update dependencies in the future, use:
+```bash
+pip freeze > requirements.txt
+```
+
+## 🛠️ Contribution and Development
+1. **Fork the repository.**
+2. Create a new branch:
+   ```bash
+   git checkout -b my-new-branch
+   ```
+3. Make changes and commit:
+   ```bash
+   git commit -m "Added new feature"
+   ```
+4. Push changes and create a **Pull Request**.
+
+## 📚 License
+This project is distributed under the **MIT License**.
