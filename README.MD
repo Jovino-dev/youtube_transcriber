@@ -52,7 +52,7 @@ deactivate
   brew install ffmpeg
   ```
 
-## 🎯 Script Usage
+### ** 🎯 Script Usage**
 
 
 Activate the environment:
@@ -77,7 +77,7 @@ deactivate
 ```
 
 
-### **3️⃣ Transcription output location**
+### ** Transcription output location**
 The transcribed text will be saved in:
 ```
 transcriptions/VIDEO_TITLE.txt
