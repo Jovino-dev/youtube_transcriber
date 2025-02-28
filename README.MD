@@ -54,7 +54,6 @@ deactivate
 
 ## 🎯 Script Usage
 
-### **1️⃣ Interactive mode (without arguments)**
 
 Activate the environment:
 
@@ -77,11 +76,6 @@ After the transcription is complete, deactivate the environment:
 deactivate
 ```
 
-### **2️⃣ Automatic mode (with URL as an argument)**
-Pass the video URL directly when running the script:
-```bash
-python transcriber.py "https://www.youtube.com/watch?v=VIDEO_ID"
-```
 
 ### **3️⃣ Transcription output location**
 The transcribed text will be saved in:
