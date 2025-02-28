@@ -16,11 +16,29 @@ This script allows you to download the audio from a **YouTube** video and transc
 git clone https://github.com/TU_USUARIO/youtube_transcriber.git
 cd youtube_transcriber
 ```
+### **2️⃣ Create .venv and Install dependencies**
 
-### **2️⃣ Install dependencies**
+To create the environment with venv, run:
+```bash
+python -m venv .venv
+```
+
+Activate the environment:
+- **Windows:**
+  ```bash
+  .venv\Scripts\activate
+  ```
+- **Linux/MacOS:**
+  ```bash
+
 Make sure you have **Python 3.8+** installed and run:
 ```bash
 pip install -r requirements.txt
+```
+
+After installing the dependencies, you can deactivate the environment with:
+```bash
+deactivate
 ```
 
 ### **3️⃣ Install FFmpeg (if not installed)**
@@ -37,9 +55,26 @@ pip install -r requirements.txt
 ## 🎯 Script Usage
 
 ### **1️⃣ Interactive mode (without arguments)**
+
+Activate the environment:
+
+```bash
+.venv\Scripts\activate
+```
+
 Run the script and enter the video URL when prompted:
 ```bash
 python transcriber.py
+```
+
+Or pass the video URL directly when running the script:
+```bash
+python transcriber.py "https://www.youtube.com/watch?v=VIDEO_ID"
+```
+
+After the transcription is complete, deactivate the environment:
+```bash
+deactivate
 ```
 
 ### **2️⃣ Automatic mode (with URL as an argument)**
@@ -51,7 +86,7 @@ python transcriber.py "https://www.youtube.com/watch?v=VIDEO_ID"
 ### **3️⃣ Transcription output location**
 The transcribed text will be saved in:
 ```
-textos/VIDEO_TITLE.txt
+transcriptions/VIDEO_TITLE.txt
 ```
 
 ## ⚙️ Optional: Update dependencies
