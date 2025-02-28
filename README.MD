@@ -30,6 +30,8 @@ Activate the environment:
   ```
 - **Linux/MacOS:**
   ```bash
+    source .venv/bin/activate
+    ```
 
 Make sure you have **Python 3.8+** installed and run:
 ```bash
