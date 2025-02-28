@@ -8,12 +8,12 @@ import shutil
 
 # Directorios
 OUTPUT_DIR = "output"
-TEXT_DIR = "textos"
+TEXT_DIR = "transcripts"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 os.makedirs(TEXT_DIR, exist_ok=True)
 
 def download_audio(youtube_url):
-    """Descarga el audio del video de YouTube en formato WebM."""
+    """Download the audio from a YouTube video using yt-dlp."""
     ydl_opts = {
         'format': 'bestaudio/best',
         'outtmpl': f'{OUTPUT_DIR}/audio.%(ext)s',
@@ -28,7 +28,7 @@ def download_audio(youtube_url):
     return audio_path, video_title
 
 def convert_to_wav(input_path):
-    """Convierte el audio descargado a formato WAV usando python-ffmpeg."""
+    """Convert the audio file to WAV format using ffmpeg."""
     wav_path = os.path.join(OUTPUT_DIR, "audio.wav")
     ffmpeg.input(input_path).output(wav_path).run(overwrite_output=True)
 
@@ -38,24 +38,25 @@ def convert_to_wav(input_path):
     return wav_path
 
 def transcribe_audio(audio_path, video_title):
-    """Transcribe el audio con Whisper y guarda la transcripción en un archivo de texto."""
+    """Transcribe the audio file using the Whisper model."""
     model = whisper.load_model("base")
     result = model.transcribe(audio_path)
     transcript_path = os.path.join(TEXT_DIR, f"{video_title}.txt")
     
+    """Write the transcription to a text file, overwrite."""
     with open(transcript_path, "w", encoding="utf-8") as f:
         f.write(result["text"])
     
-    print(f"\n✅ Transcripción completada. Guardada en: {transcript_path}")
+    print(f"\n✅ Transcription completed. Saved in: {transcript_path}")
     return transcript_path
 
 def clean_output():
-    """Elimina todos los archivos de la carpeta output."""
+    """ Remove the output directory and create a new one."""
     shutil.rmtree(OUTPUT_DIR)
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 if __name__ == "__main__":
-    youtube_url = sys.argv[1] if len(sys.argv) > 1 else input("📺 Ingresa la URL del video de YouTube: ")
+    youtube_url = sys.argv[1] if len(sys.argv) > 1 else input("📺 Input the YouTube URL: ")
     audio_file, video_title = download_audio(youtube_url)
     wav_file = convert_to_wav(audio_file)
     transcribe_audio(wav_file, video_title)
