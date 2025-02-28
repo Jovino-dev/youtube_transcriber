@@ -1,0 +1,5 @@
+output/
+*.mp3
+*.wav
+*.log
+__pycache__/
